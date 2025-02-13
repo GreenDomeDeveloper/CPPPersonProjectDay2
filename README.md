@@ -38,6 +38,16 @@ The `Person` class is a simple representation of a person with a name and age. I
 - `void setAge(int newAge)`: Sets the age of the person.
 - `void hasBirthday()`: Increments the age of the person by one.
 
+### New Methods
+- `isValidAge(int age)`: Static method that validates if an age value is within the acceptable range of 0-120 years
+  - Returns: `true` if age is valid, `false` otherwise
+  - Usage example:
+    ```cpp
+    if (Person::isValidAge(25)) {
+        // Age is valid
+    }
+    ```
+
 ### Constructors
 
 - `Person()`: Default constructor that initializes the name to "John Doe" and the age to 42.
