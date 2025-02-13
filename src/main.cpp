@@ -12,6 +12,7 @@ int main() {
     p1.setAge(60);
     p1.setName("Bob Williams");
     p2.hasBirthday();
+    // p2.isValidAge(50);  method is private so cannot be accessed in main
 
     cout << "\nAfter updates ..."<<endl;
     cout << p1.getName() << " is " << p1.getAge() << " years old."<<endl;

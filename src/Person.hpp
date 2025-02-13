@@ -6,8 +6,9 @@ using namespace std;
 
 class Person {
     private:
-        string name;
-        int age;
+        string name = "unknown"; // redundant
+        int age = 0; // default contructor wins
+        bool isValidAge(int);
     public:
         Person();
         Person(string, int);

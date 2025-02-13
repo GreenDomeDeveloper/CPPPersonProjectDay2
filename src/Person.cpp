@@ -1,15 +1,22 @@
 #include "Person.hpp"
 
+bool Person::isValidAge(int newAge)
+{
+    if ((newAge>=0)&&(newAge<=120))
+        return true;
+    else
+        return false;
+}
+
 Person::Person()
 {
     name = "John Doe";
     age = 42;
 }
 
-Person::Person(string newName, int newAge)
+Person::Person(string newName, int newAge): name(newName), age(newAge)
 {
-    name = newName;
-    age = newAge;
+    // Now uses constructor initialization list
 }
 
 string Person::getName()
@@ -19,17 +26,20 @@ string Person::getName()
 
 int Person::getAge()
 {
-    return age;
+    return this->age;
 }
 
-void Person::setName(string newName)
+void Person::setName(string name)
 {
-    name = newName;
+    this->name = name; // using the this pointer
 }
 
 void Person::setAge(int newAge)
 {
-    age = newAge;
+    if (isValidAge(newAge))
+        age = newAge;
+    else
+        age = 0; // or just not set it ie. retain the old value
 }
 
 void Person::hasBirthday()
